@@ -7,8 +7,6 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - TesteMB/**
 
 jobs:
   build:
@@ -27,4 +25,4 @@ jobs:
 
       - name: Run tests
         run: |
-          docker run hello-world:latest pytest  
+          docker run --rm hello-world:latest pytest
