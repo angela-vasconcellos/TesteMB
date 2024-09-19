@@ -1,4 +1,4 @@
 FROM python:3
 WORKDIR /app
-COPY hello.py .
+COPY main.py .
 CMD ["python", "main.py"]
