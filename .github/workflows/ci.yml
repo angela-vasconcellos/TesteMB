@@ -24,10 +24,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build . --tag hello-world:latest
-
-      - name: Run Ruby script
+          
+      - name: Run Ruby script with timeout
         run: |
-          docker run --rm hello-world:latest
+          timeout 10s docker run --rm hello-world:latest
+
 
   deploy:
     runs-on: ubuntu-latest
