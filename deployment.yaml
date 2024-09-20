@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angela-deployment-1
+  namespace: teste
+  labels:
+    app: angela-api-1  # Altere aqui para um nome mais representativo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angela-api-1  # Deve corresponder ao label do template
+  template:
+    metadata:
+      labels:
+        app: angela-api-1  # Deve corresponder ao seletor
+    spec:
+      containers:
+      - name: angela-api-1-container
+        image: angelavbarros/hello-world:latest
+        ports:
+        - containerPort: 8080
