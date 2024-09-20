@@ -1,5 +1,6 @@
 loop do
   puts 'Hello World'
-  STDOUT.flash
+  STDOUT.flush
   sleep 1
 end
+
