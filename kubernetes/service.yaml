@@ -8,7 +8,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80            # Porta exposta do Service
-    targetPort: 8080    # Porta do container
+  - port: 80          
+    targetPort: 8080   
   selector:
-    app: angela-api-1    # Seleciona os Pods do Deployment
+    app: angela-api-1    
