@@ -23,7 +23,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build . --tag hello-world:latest
+          docker build . --tag hello-world:$(git rev-parse --short HEAD)
 
 
 
@@ -46,5 +46,5 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build . --tag ${{ secrets.DOCKER_USERNAME }}/hello-world:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/hello-world:latest
+          docker build . --tag ${{ secrets.DOCKER_USERNAME }}/hello-world:$(git rev-parse --short HEAD)
+          docker push ${{ secrets.DOCKER_USERNAME }}/hello-world:$(git rev-parse --short HEAD)
