@@ -1,4 +1,4 @@
-FROM golang:1.21.0 as builder
+FROM golang:1.23.1 as builder
 WORKDIR /app
 RUN go mod init hello-app
 COPY *.go ./
